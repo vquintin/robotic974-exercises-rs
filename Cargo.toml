@@ -1,0 +1,20 @@
+[workspace]
+resolver = "2"
+
+members = ["crates/exercises", "crates/uno"]
+
+[workspace.dependencies]
+exercises = { version = "0.1.0", path = "./crates/exercises" }
+
+# Configure the build for minimal size - AVRs have very little program memory
+[profile.dev]
+panic = "abort"
+lto = true
+opt-level = "s"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "s"

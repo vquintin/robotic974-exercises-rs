@@ -1,5 +1,6 @@
 #![no_std]
 
+pub mod chenillard;
 pub mod chrono;
 
 pub fn add(left: usize, right: usize) -> usize {

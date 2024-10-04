@@ -5,10 +5,10 @@ authors = ["Virgile Quintin <virgile@quintin.re>"]
 edition = "2021"
 license = "MIT"
 
-[[bin]]
-name = "uno"
-test = false
-bench = false
+#[[bin]]
+#name = "uno"
+#test = false
+#bench = false
 
 [dependencies]
 panic-halt = "0.2.0"
@@ -28,3 +28,6 @@ features = ["arduino-uno"]
 # toolchain is still supported.  See https://github.com/Rahix/avr-hal/issues/537
 [build-dependencies.proc-macro2]
 version = "=1.0.79"
+
+[dependencies.avr-device]
+version = "0.5.4"

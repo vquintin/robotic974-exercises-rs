@@ -126,6 +126,7 @@ checksum = "723dce4e9f25b6e6c5f35628e144794e5b459216ed7da97b7c4b66cdb3fa82ca"
 name = "exercises"
 version = "0.1.0"
 dependencies = [
+ "embedded-hal 0.2.7",
  "embedded-hal 1.0.0",
 ]
 

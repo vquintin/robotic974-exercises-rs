@@ -3,6 +3,8 @@
 pub mod chenillard;
 pub mod chrono;
 pub mod cowboy;
+pub mod debounce;
+pub mod low_pass;
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right

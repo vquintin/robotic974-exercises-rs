@@ -8,3 +8,7 @@ embedded-hal = "1.0"
 embedded-hal-02 = { version = "0.2.7", features = [
     "unproven",
 ], package = "embedded-hal" }
+libm = "0.2.8"
+ufmt = "0.2.0"
+# Higher needs >= 1.79.0 for rust
+fixed = "=1.27.0"

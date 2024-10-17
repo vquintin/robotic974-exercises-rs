@@ -12,3 +12,4 @@ libm = "0.2.8"
 ufmt = "0.2.0"
 # Higher needs >= 1.79.0 for rust
 fixed = "=1.27.0"
+nb = "1.1.0"

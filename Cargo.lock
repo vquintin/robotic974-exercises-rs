@@ -148,6 +148,7 @@ dependencies = [
  "embedded-hal 1.0.0",
  "fixed",
  "libm",
+ "nb 1.1.0",
  "ufmt",
 ]
 

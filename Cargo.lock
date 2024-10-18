@@ -232,6 +232,19 @@ dependencies = [
  "panic-halt",
  "proc-macro2",
  "ufmt",
+ "uno-helper",
+]
+
+[[package]]
+name = "uno-helper"
+version = "0.1.0"
+dependencies = [
+ "arduino-hal",
+ "avr-device",
+ "embedded-hal 1.0.0",
+ "exercises",
+ "panic-halt",
+ "proc-macro2",
 ]
 
 [[package]]

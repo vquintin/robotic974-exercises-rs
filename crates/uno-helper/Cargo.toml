@@ -1,22 +1,12 @@
 [package]
-name = "uno"
+name = "uno-helper"
 version = "0.1.0"
-authors = ["Virgile Quintin <virgile@quintin.re>"]
 edition = "2021"
-license = "MIT"
-
-[[bin]]
-name = "uno"
-test = false
-bench = false
 
 [dependencies]
 panic-halt = "0.2.0"
-ufmt = "0.2.0"
-nb = "1.1.0"
 embedded-hal = "1.0"
 exercises = { workspace = true }
-uno-helper = { workspace = true }
 
 [dependencies.arduino-hal]
 git = "https://github.com/rahix/avr-hal"
@@ -28,3 +18,6 @@ features = ["arduino-uno"]
 # toolchain is still supported.  See https://github.com/Rahix/avr-hal/issues/537
 [build-dependencies.proc-macro2]
 version = "=1.0.79"
+
+[dependencies.avr-device]
+version = "0.5.4"

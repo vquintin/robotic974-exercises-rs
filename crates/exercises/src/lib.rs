@@ -1,5 +1,7 @@
 #![no_std]
 
+pub mod chrono;
+
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }

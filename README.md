@@ -1,47 +1,16 @@
-A template Rust project with fully functional and no-frills Nix support, as well as builtin VSCode configuration to get IDE experience without any manual setup (just [install direnv](https://nixos.asia/en/direnv), open in VSCode and accept the suggestions). It uses [crane](https://crane.dev/), via [rust-flake](https://github.com/juspay/rust-flake).
+This repository contains some of the arduino exercises of the [Robotic 974](https://www.facebook.com/robotic974) robotics club done in rust
 
-> [!NOTE]
-> If you are looking for the original template based on [this blog post](https://srid.ca/rust-nix)'s use of `crate2nix`, browse from [this tag](https://github.com/srid/arduino-rouille/tree/crate2nix). The evolution of this template can be gleaned from [releases](https://github.com/srid/arduino-rouille/releases).
+I did this to start learning rust hence it may not be completely idiomatic. 
+I tried to achieve these goals:
+- device-independent: the exercises are implemented using the [embedded-hal](https://docs.rs/embedded-hal/latest/embedded_hal/) abstractions and then run on the arduino uno using the [avr-hal](https://github.com/Rahix/avr-hal) implementation of these abstractions. It should be possible to easily run the exercises on something else using the appropriate implementations of the hal (e.g. [esp-hal](https://github.com/esp-rs/esp-hal))
+  I split the exercises this way in order to be able to unit-tests them on my computer (it is easier to run tests on a computer than it is to debug an embedded system)
+- non-blocking (no delay, no blocking on adc reads) but the debug serial writes might still be blocking.
+- documented: I wrote some comments to explain the exercises. Not sure I did enough.
 
-## Usage
+## exercises
+See how to run them on your arduino [here](crates/uno/README.md)
 
-You can use [omnix](https://omnix.page/om/init.html)[^omnix] to initialize this template:
-```
-DIR=~/my-rust-project
-mkdir $DIR && cd $DIR
-nix --accept-flake-config run github:juspay/omnix -- init github:srid/arduino-rouille -o .
-```
-
-[^omnix]: If initializing manually, make sure to:
-    - Change `name` in Cargo.toml.
-    - Run `cargo generate-lockfile` in the nix shelld
-
-## Adapting this template
-
-
-- There are two CI workflows, and one of them uses Nix which is slower (unless you configure a cache) than the other one based on rustup. Pick one or the other depending on your trade-offs.
-
-## Development (Flakes)
-
-This repo uses [Flakes](https://nixos.asia/en/flakes) from the get-go.
-
-```bash
-# Dev shell
-nix develop
-
-# or run via cargo
-nix develop -c cargo run
-
-# build
-nix build
-```
-
-We also provide a [`justfile`](https://just.systems/) for Makefile'esque commands to be run inside of the devShell.
-
-## Discussion
-
-- [Zulip](https://nixos.zulipchat.com/#narrow/stream/413950-nix)
-
-## See Also
-
-- [nixos.wiki: Packaging Rust projects with nix](https://nixos.wiki/wiki/Rust#Packaging_Rust_projects_with_nix)
+- chenillard: 8 leds blinking in a cycle, with a single led turned on at a time
+- cowboy: a speed game where you have to press your button faster than your opponents
+- debounce: an extra exercice with a software button debounce example. It is done using an exponential moving average on fixed point arithmetic.
+- vumetre: turn on part of a led array after a potentiometer position.

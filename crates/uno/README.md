@@ -1,34 +1,35 @@
-uno
-===
+## How to run the examples
 
-Rust project for the _Arduino Uno_.
+- You need to install the [nix package manager](https://nixos.org/) (works best on linux): https://nixos.org/download/
 
-## Build Instructions
-1. Install prerequisites as described in the [`avr-hal` README] (`avr-gcc`, `avr-libc`, `avrdude`, [`ravedude`]).
+- You need to enable flakes for nix:
+  ```
+  experimental-features = nix-command flakes
+  ```
+  in `~/.config/nix/nix.conf`
 
-2. Run `cargo build` to build the firmware.
+  (See https://nixos.wiki/wiki/Flakes)
 
-3. Run `cargo run` to flash the firmware to a connected board.  If `ravedude`
-   fails to detect your board, check its documentation at
-   <https://crates.io/crates/ravedude>.
+- Setup the environment:
+  
+  Run:
+  ```
+  nix develop
+  ```
+  to download the dependencies and setup the environment (it will take some time the first time).
 
-4. `ravedude` will open a console session after flashing where you can interact
-   with the UART console of your board.
+- Run the programs on your arduino:
+  From the `nix develop` shell, move into the `uno` directory:
+  ```
+  cd crates/uno
+  ```
+  From there run the programs with cargo, the rust build tool, e.g.:
+  ```
+  cargo run --bin chenillard
+  ```
+  
+  cargo will compile + flash the arduino.
 
-[`avr-hal` README]: https://github.com/Rahix/avr-hal#readme
-[`ravedude`]: https://crates.io/crates/ravedude
+  The possible programs to run are the files in `crates/uno/src/bin`, without the `.rs` suffix.
 
-## License
-Licensed under either of
-
- - Apache License, Version 2.0
-   ([LICENSE-APACHE](LICENSE-APACHE) or <http://www.apache.org/licenses/LICENSE-2.0>)
- - MIT license
-   ([LICENSE-MIT](LICENSE-MIT) or <http://opensource.org/licenses/MIT>)
-
-at your option.
-
-## Contribution
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in the work by you, as defined in the Apache-2.0 license, shall
-be dual licensed as above, without any additional terms or conditions.
+  You may need to put your user (if not already done) in the `plugdev` group to flash the arduino.

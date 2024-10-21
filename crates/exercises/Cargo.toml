@@ -13,3 +13,4 @@ ufmt = "0.2.0"
 # Higher needs >= 1.79.0 for rust
 fixed = "=1.27.0"
 nb = "1.1.0"
+rand = { version = "0.8.5", features = ["small_rng"], default-features = false }

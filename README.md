@@ -14,3 +14,4 @@ See how to run them on your arduino [here](crates/uno/README.md)
 - cowboy: a speed game where you have to press your button faster than your opponents
 - debounce: an extra exercice with a software button debounce example. It is done using an exponential moving average on fixed point arithmetic.
 - vumetre: turn on part of a led array after a potentiometer position.
+- dice: a virtual dice that is cast on the press of a button. The result is displayed as a number of turned on leds.

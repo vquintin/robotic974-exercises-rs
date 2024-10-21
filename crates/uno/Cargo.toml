@@ -19,6 +19,7 @@ embedded-hal = "1.0"
 fixed = "=1.27.0"
 exercises = { workspace = true }
 uno-helper = { workspace = true }
+rand = { version = "0.8.5", features = ["small_rng"], default-features = false }
 
 [dependencies.arduino-hal]
 git = "https://github.com/rahix/avr-hal"

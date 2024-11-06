@@ -15,3 +15,4 @@ See how to run them on your arduino [here](crates/uno/README.md)
 - debounce: an extra exercice with a software button debounce example. It is done using an exponential moving average on fixed point arithmetic.
 - vumetre: turn on part of a led array after a potentiometer position.
 - dice: a virtual dice that is cast on the press of a button. The result is displayed as a number of turned on leds.
+- wiper: a "windshield wiper" with a servo motor. Hold the button to move the wiper to the end. Release it to let it come back. Uses fixed point arithmetic and const functions. 

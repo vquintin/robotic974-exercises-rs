@@ -312,6 +312,7 @@ dependencies = [
  "rand",
  "ufmt",
  "uno-helper",
+ "uno-lib",
 ]
 
 [[package]]
@@ -324,6 +325,14 @@ dependencies = [
  "exercises",
  "panic-halt",
  "proc-macro2",
+ "uno-lib",
+]
+
+[[package]]
+name = "uno-lib"
+version = "0.1.0"
+dependencies = [
+ "fixed",
 ]
 
 [[package]]

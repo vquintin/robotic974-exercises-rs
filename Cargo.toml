@@ -1,11 +1,17 @@
 [workspace]
 resolver = "2"
 
-members = ["crates/uno-helper", "crates/exercises", "crates/uno"]
+members = [
+    "crates/uno-helper",
+    "crates/exercises",
+    "crates/uno",
+    "crates/uno-lib",
+]
 
 [workspace.dependencies]
 exercises = { version = "0.1.0", path = "./crates/exercises" }
 uno-helper = { version = "0.1.0", path = "./crates/uno-helper" }
+uno-lib = { version = "0.1.0", path = "./crates/uno-lib" }
 
 # Configure the build for minimal size - AVRs have very little program memory
 [profile.dev]

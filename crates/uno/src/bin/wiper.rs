@@ -2,6 +2,8 @@
 #![no_main]
 #![feature(const_option)]
 
+use core::ops::Deref;
+
 use fixed::types::{I3F13, U1F15, U24F8};
 use panic_halt as _;
 
@@ -44,7 +46,7 @@ fn main() -> ! {
 
     pins.d9.into_output();
 
-    let s = uno_helper::precise_pwm::new_precise_pwm(dp.TC1, PRECISE_TIMER_PARAMS);
+    let (s, _) = uno_helper::precise_pwm::new_precise_pwm(dp.TC1.deref(), PRECISE_TIMER_PARAMS);
 
     let mut my_pins = exercises::wiper::OutputPeripherals {
         servo: s,

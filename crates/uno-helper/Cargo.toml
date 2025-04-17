@@ -4,21 +4,13 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-panic-halt = "0.2.0"
+avr-device = "0.7"
+panic-halt = "1.0.0"
 embedded-hal = "1.0"
 exercises = { workspace = true }
 uno-lib = { workspace = true }
 
 [dependencies.arduino-hal]
 git = "https://github.com/rahix/avr-hal"
-rev = "3e362624547462928a219c40f9ea8e3a64f21e5f"
+rev = "286fd48dd7d27c770efcd95f21aecb0c21d4048a"
 features = ["arduino-uno"]
-
-# The latest releases of `proc-macro2` do not support the rust toolchain that
-# we use.  Thus, we must fix this dependency to an older version where our
-# toolchain is still supported.  See https://github.com/Rahix/avr-hal/issues/537
-[build-dependencies.proc-macro2]
-version = "=1.0.79"
-
-[dependencies.avr-device]
-version = "0.5.4"

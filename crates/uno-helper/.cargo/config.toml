@@ -1,5 +1,6 @@
 [build]
-target = "avr-specs/avr-atmega328p.json"
+target = "avr-none"
+rustflags = ["-C", "target-cpu=atmega328p"]
 
 [unstable]
 build-std = ["core"]

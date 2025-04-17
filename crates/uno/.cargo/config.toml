@@ -1,8 +1,6 @@
 [build]
-target = "avr-specs/avr-atmega328p.json"
-# remove on toolchain update
-# https://github.com/rust-lang/cargo/issues/7433
-rustflags = ["-C", "link-arg=-Wl,--allow-multiple-definition"]
+target = "avr-none"
+rustflags = ["-C", "target-cpu=atmega328p"]
 
 [target.'cfg(target_arch = "avr")']
 runner = "ravedude uno -cb 57600 -P /dev/ttyUSB0"
